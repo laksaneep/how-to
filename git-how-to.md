@@ -1,41 +1,73 @@
 # Work with git
 
-### Create and add your remote repo
 
-1. Create your repository on github
-2. Add remote repository to your project
+### Case 1 : Want to push local project to github
+1. Add .git in local project
+   ```
+   git init
+   ```
+2. Create your repository on github
+3. Add remote repository to your project
    ```
    git remote add origin https://github.com/OWNER/REPOSITORY.git
    ```
-3. Check your remote repo
+4. Check your remote repo
    ```
    git remote -v
    ```
-
-### Update your local repo
-
-1. Check different between local and remote repo
+5. Create branch in local project
    ```
-   git fetch
+   git branch -M main (git branch -M <branch>)
    ```
-2. Pull your remote repo to your local
-   ```
-   git pull
-   ```
-
-### Push your code
-
-1. Add all your changed code to 'staged'
+6. Add all your changed code to 'staged'
    ```
    git add .
    ```
-2. Commit to your _local_
+   or
+   ```
+   git add folder-name filename.txt 
+   ```
+8. Commit to your _local_
    ```
    git commit -m 'message you want to commit'
    ```
-3. Push your commit to your _Remote Repository_
+9. Push your commit to your _Remote Repository_
    ```
-   git push -u origin master
+   git push -u origin main (git push -u origin <branch>)
+   ```
+
+### Case 2 : Want to clone remote repo to your project
+1. Clone remote repo to local project 
+   ```
+   git clone https://github.com/OWNER/REPOSITORY.git
+   ```
+2. Check Is there any update?
+   ```
+   git fetch
+   ```
+   ```
+   git pull
+   ```
+3. Start write code with others
+4. Add all your changed code to 'staged'
+   ```
+   git add .
+   ```
+   or
+   ```
+   git add folder-name filename.txt 
+   ```
+
+   *** if need to clear all files/folder in 'staged'
+   ` git reset `
+   
+7. Commit to your _local_
+   ```
+   git commit -m 'message you want to commit'
+   ```
+8. Push your commit to your _Remote Repository_
+   ```
+   git push -u origin main (git push -u origin <branch>)
    ```
 
 ### Manage branch
@@ -54,5 +86,11 @@
    ```
 
 ### Check status of files
-
+   ```
     git status
+   ```
+
+### Delete local repo in your project
+   ```
+   rm -rf .git
+   ```
